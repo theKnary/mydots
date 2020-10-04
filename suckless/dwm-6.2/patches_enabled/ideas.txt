@@ -1,0 +1,7 @@
+patch ideas:
+
+- border only at top of window and compatible with rounded corners
+- full borders when gaps disabled
+
+- move rounded corners into drw.c/drw.h instead of current dwm.c
+- no anti-aliasing in X11? :( is there a fix/alternative -> what's sway sayin'

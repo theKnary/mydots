@@ -1,0 +1,2 @@
+modified the bar padding patch pretty heavily to remove padding if the layout
+is monocle or if gaps have been toggled off.

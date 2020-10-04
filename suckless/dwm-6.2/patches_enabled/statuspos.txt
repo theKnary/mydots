@@ -1,0 +1,2 @@
+Similar to titlepos. A decimal value in the config determines the position of
+the status bar.

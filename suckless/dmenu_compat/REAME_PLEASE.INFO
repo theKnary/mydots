@@ -1,0 +1,18 @@
+***
+
+This is just a unpatched version of dmenu. I use this with surf only. The other
+dmenu is used for general purposes.
+
+***
+
+* This is handled by the normal dmenu make file *
+
+I achieve this by:
+
+installing this build first,
+
+renaming the binary from dmenu to dmenu_comp in /usr/local/bin,
+
+changing the surf config file to call dmenu_comp instead of dmenu,
+
+and then finally installing my general purpose build of dmenu.

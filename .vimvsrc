@@ -1,0 +1,61 @@
+" VIMRC - knary
+
+" -- Basics --
+
+" turn off all error bells
+set noerrorbells visualbell t_vb=
+
+" spacing
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set noexpandtab
+" symbols for tabs, trailing spaces etc.
+set listchars=tab:\|\ ,extends:›,precedes:‹,nbsp:·,trail:·
+" text width
+set tw=80
+
+" colours and highlight col 81 and 121 (80, 120 col wrapping standards)
+colors PaperColor
+set colorcolumn=81,121,122
+set cul
+set culopt=number
+hi Visual ctermbg=8
+hi EndOfBuffer ctermfg=8
+let g:minimap_highlight='ColorColumn'
+hi colorcolumn ctermbg=8
+hi listchars ctermbg=8
+" listchars colour
+hi SpecialKey ctermfg=8
+" line numbers
+hi LineNr ctermfg=8
+hi CursorLineNr cterm=bold ctermfg=black ctermbg=8
+
+" vert split colours
+hi VertSplit ctermfg=8
+hi VertSplit ctermbg=8
+
+" -- Mappings --
+
+" lazy nav
+"inoremap kk <Esc>
+inoremap ,, <Esc>la
+
+" lazy shortcuts
+imap ,a +
+imap ,s -
+imap ,r %
+imap ,d *
+imap ,f _
+imap ,r &
+imap ,e =
+
+imap ,j (
+imap ,k {
+imap ,l [
+
+" tabs
+noremap <C-t> :tabnew 
+noremap <C-l> :tabn<CR>
+noremap <C-h> :tabp<CR>
+utocmd Filetype vue set cindent

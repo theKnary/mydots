@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/knary/dev/webapps/cordisync/api.cordisync.com/src/system/router'
+let g:netrw_dirhist_0='/home/knary/dev/webapps/cordisync/api.cordisync.com/src/system/db'
+let g:netrw_dirhist_9='/home/knary/dev/webapps/cordisync/api.cordisync.com/src/system/app'
+let g:netrw_dirhist_8='/home/knary/dev/webapps/cordisync/api.cordisync.com/src/pkg/types/routes'
+let g:netrw_dirhist_7='/home/knary/dev/webapps/cordisync/api.cordisync.com/src/pkg/types'
+let g:netrw_dirhist_6='/home/knary/dev/webapps/cordisync/api.cordisync.com/src/pkg/db'
+let g:netrw_dirhist_5='/home/knary/dev/webapps/cordisync/api.cordisync.com/src/system'
+let g:netrw_dirhist_4='/home/knary/dev/webapps/cordisync/api.cordisync.com/src/pkg'
+let g:netrw_dirhist_3='/home/knary/dev/webapps/cordisync/api.cordisync.com/src/controllers'
+let g:netrw_dirhist_2='/home/knary/dev/webapps/cordisync/api.cordisync.com/src'

@@ -1,0 +1,61 @@
+#!/bin/bash
+# simple satus bar for dwm
+
+# get local ip
+ipv4() {
+	echo $(ip route get 1 | awk '{print $(NF-2);exit}')
+}
+# get master volume
+vol() {
+	echo $(echo 'vol: ' && echo -n $(pamixer --get-volume) && echo %)
+}
+# get mic status
+mic() {
+	echo -n 'mic: '
+	if [ $(amixer get Mic | egrep -m1 -o '\[o.+\]') == "[off]" ]; then
+		echo -n '--'
+	else
+		echo -n '++'
+	fi
+}
+# get current date and time
+date_time() {
+	echo $(date "+  %b %d | %H:%M  ")
+}
+# get weather temp from wttr.in and print only the current temp
+wttr() {
+	# high and low
+	#echo $(curl -s -N wttr.in/?Toronto | grep -m 1 -Eo -e '[-+]?[0-9].*°C')
+	# current temp
+	echo $(curl -s -N wttr.in/Toronto?format=1 | grep -Eoe '[-+]?[0-9].*°C')
+}
+# print available root storage
+root_avail() {
+	echo $(df -h --output=avail /dev/nvme0n1p2 | grep -o '[0-9.0-9]*G')
+}
+# print available home storage
+home_avail() {
+	echo $(df -h --output=avail /dev/nvme0n1p4 | grep -o '[0-9.0-9]*G')
+}
+# print memory usage
+mem_use() {
+	echo $(echo 'ram: ' && free -m | awk 'NR==2{printf "%.1fG", $3/1024 }')
+}
+cpu_temp() {
+	echo $(echo 'ct: ' && sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp)
+}
+cpu_usage() {
+	echo $(echo 'cu: ' && top -bn 2 -d 0.01 | grep '^%Cpu' | tail -n 1 | gawk '{print $2+$4+$6"%"}')
+}
+# loop that refreshes info
+#while true
+#do
+#	# set xwindow root name (dwm displays the root name at top right)
+#	xsetroot -name "[$(vol)] [$(root_avail)] [$(home_avail)] $(date_time) [$(mem_use)] [$(lan_ip)] [$(wttr)]"
+#	# wait 10 seconds between loops
+#	sleep 10
+#done
+
+# return only specified func
+
+echo $($1)

@@ -1,0 +1,5 @@
+# this install dwm again and restarts it
+
+(cd /home/knary/.cstmpkgs/suckless/dwm-6.2/ && bash install)
+(cd /home/knary/.cstmpkgs/suckless/st-0.8.2/ && bash install)
+(cd /home/knary/.cstmpkgs/suckless/tabbed/ && bash install)
